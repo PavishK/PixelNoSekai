@@ -4,7 +4,7 @@ A personal image manager built with **Next.js**, **Prisma**, **Tailwind CSS**, *
 
 ## Sample Screenshot
 
-![Sample Screenshot](https://raw.githubusercontent.com/PavishK/PixelNoSekai/main/public/sample-screenshot.png)
+![Sample Screenshot](https://github.com/user-attachments/assets/3e1a1ab1-e7a2-43dd-83fb-92a23dab6ae5)
 
 ## Features
 
