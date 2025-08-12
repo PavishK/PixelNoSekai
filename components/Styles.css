@@ -1,0 +1,8 @@
+::-webkit-scrollbar{
+        display: none;
+}
+
+.custom-nav-icon{
+    @apply cursor-pointer transition-all ease-linear delay-100 hover:scale-105
+}
+

@@ -1,26 +1,47 @@
 @import "tailwindcss";
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer{
+    html, body{
+        @apply overflow-hidden h-screen w-screen p-0 m-0;
+    }
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme{
+    --color-base:#A5D6A7;
+    --color-head:#2E7D32;
+    --color-para:#1B5E20;
+    --color-btn:#C8E6C9;
+
+    --color-menu:#66BB6A;
+    --color-mentxt:#1B5E20;
+    --color-menico:#2E7D32;
+    --color-menhov:#81C784;
+    --color-link:#0096C7;
+    --color-btntxt:#A5D6A7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.clip-image{
+    background: url("../public/pns-home.jpg");
+    background-size:cover;
+    animation: animate 3s ease-in-out alternate-reverse;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes animate{
+    0%{
+        clip-path: circle(100% at 50% 50%);
+    }
+    25%{
+        clip-path: circle(25% at 50% 50%);
+    }
+    50%{
+        clip-path: circle(25% at 20% 80%);
+    }
+    75%{
+        clip-path: circle(25% at 80% 20%);
+    }
+    100%{
+        clip-path: circle(25% at 80% 80%);
+    }
 }
+

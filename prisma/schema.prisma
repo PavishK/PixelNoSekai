@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String    @unique
+  image     String?
+  createdAt DateTime  @default(now())
+  galleries Gallery[]
+}
+
+model Gallery {
+  id         Int      @id @default(autoincrement())
+  imageUrl   String
+  note       String
+  userEmail  String
+  image_name String?
+  image_size String?
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userEmail], references: [email], onDelete: Cascade)
+}
