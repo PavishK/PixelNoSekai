@@ -19,7 +19,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         <SessionWrapper>
           {children}
-          <Toaster position="bottom-center" toastOptions={{duration:3000}}/>
+          <Toaster position="bottom-center" toastOptions={{duration:2500}}/>
         </SessionWrapper>
       </body>
     </html>

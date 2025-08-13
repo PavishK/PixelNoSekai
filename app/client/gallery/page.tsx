@@ -3,7 +3,7 @@
 import {
     PlusCircle
 } from 'lucide-react';
-import { useSession } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 import { AnimatePresence } from 'framer-motion';
 import Spinner from "@/components/Spinner";
 import UploadImage from '@/components/UploadImage';
@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import ListImages from '@/components/ListImages';
+import Image from 'next/image';
 
 interface uploadSchema{
   file:File | null;
@@ -115,7 +116,21 @@ export default function Gallery() {
       }
     },[status])
 
-
+    if(!session){
+      return (
+        <div className='h-screen w-screen flex items-center justify-center bg-white/70'>
+          <div className='flex items-center justify-center flex-col gap-y-6 border-2 p-4 rounded-lg bg-[#A5D6A7] border-[#2E7D32]'>
+          <span className='text-2xl font-medium text-mentxt'>Please sign in to continue.</span>
+          <button className='cursor-pointer hover:bg-blue-500 hover:scale-95 hover:text-white transition-colors flex items-center justify-normal gap-x-1 font-medium bg-white p-2 rounded-lg'
+          onClick={()=>signIn('google')}
+          >
+            <Image src={"/google.png"} alt='Google' width={30} height={30}/>
+            Continue with Google
+          </button>
+          </div>
+        </div>
+      )
+    }
 
     return (
         <>

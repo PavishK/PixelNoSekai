@@ -76,7 +76,7 @@ export default function ListImages({galleryData, rmData}:GallerySchema) {
                 {gallery.map((val,i)=>(
                 <div className=" relative w-72 h-96 bg-white rounded-lg flex items-center justify-start flex-col group " key={i}>
                     <Image src={val.imageUrl} alt='something' width={150} height={150}
-                    className='w-full flex-1/2 object-cover bg-black/70 rounded-t-lg'
+                    className='w-full flex-1/2 object-cover bg-white/80 rounded-t-lg'
                     />
                 <div>
                     

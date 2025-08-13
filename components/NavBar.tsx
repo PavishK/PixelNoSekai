@@ -87,7 +87,7 @@ export default function NavBar() {
                         onClick={()=>setToggleGoogle(prev=>!prev)}
                         />
                         ):(
-                        <button className='flex items-center justify-normal gap-x-1 text-xs border p-2 rounded-xl hover:bg-blue-500 cursor-pointer hover:text-white'
+                        <button className='flex items-center justify-normal gap-x-1 text-xs border p-2 rounded-xl transition-colors hover:bg-blue-500 cursor-pointer hover:text-white'
                         onClick={()=>signIn('google')}
                         >
                             <Image src="/google.png" alt='G+' width={20} height={20}/>
